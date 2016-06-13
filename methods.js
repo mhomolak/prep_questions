@@ -37,29 +37,29 @@ console.log(anagram("TEAM", "MEAT"));
 // print(‘S’)
 
 
-// function mostCommon(str) {
-// 	let highCount = 0;
-// 	let highestArry = [];
-//
-// 	let obj = str.toLowerCase().split("").reduce((finalResult, currentLetter) => {
-// 		if(!finalResult[currentLetter]) finalResult[currentLetter] = 1;
-// 		else finalResult[currentLetter] += 1;
-// 		return finalResult;
-// 	}, {})
-//
-// 	for(let key in obj) {
-// 		if(obj[key] >= highCount) {
-// 			highCount = obj[key];
-// 		}
-// 	}
-//
-// 	for(let key in obj) {
-// 		if(obj[key] === highCount) {
-// 			highestArry.push(key)
-// 		}
-// 	}
-//
-// 	return highestArry;
-// }
-//
-// console.log(mostCommon("TESTS"));
+function mostCommon(str) {
+	let highCount = 0;
+	let highestArry = [];
+
+	let obj = str.toLowerCase().split("").reduce((finalResult, currentLetter) => {
+		if(!finalResult[currentLetter]) finalResult[currentLetter] = 1;
+		else finalResult[currentLetter] += 1;
+		return finalResult;
+	}, {})
+
+	for(let key in obj) {
+		if(obj[key] >= highCount) {
+			highCount = obj[key];
+		}
+	}
+
+	for(let key in obj) {
+		if(obj[key] === highCount) {
+			highestArry.push(key)
+		}
+	}
+
+	return highestArry;
+}
+
+console.log(mostCommon("TESTS"));
